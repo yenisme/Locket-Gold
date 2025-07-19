@@ -1,0 +1,10 @@
+#!url=https://raw.githubusercontent.com/yenisme/Locket-Gold/main/Locket_Gold_Kthy.sgmodule
+#!name=Locket Gold (FREE)
+#!desc=By: Kthy (MOD CSA) [Script]
+
+revenuecat = type=http-response, pattern=^https://api\.revenuecat\.com/.+/(receipts$|subscribers/[^/]+$), script-path=https://raw.githubusercontent.com/yenisme/Locket-Gold/main/Locket_Gold.js, requires-body=true, max-size=-1, timeout=60
+
+deleteHeader = type=http-request, pattern=^https://api\.revenuecat\.com/.+/(receipts|subscribers), script-path=https://raw.githubusercontent.com/yenisme/Locket-Gold/main/LKG_delete_header.js, timeout=60
+
+[MITM]
+hostname = %APPEND% api.revenuecat.com
